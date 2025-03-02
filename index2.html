@@ -85,6 +85,32 @@
             display: flex;
             align-items: center;
             gap: 5px;
+            cursor: pointer;
+        }
+        
+        /* Search Bar */
+        .search-container {
+            margin-top: 15px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 10px 40px 10px 15px;
+            border-radius: 30px;
+            border: none;
+            font-size: 14px;
+        }
+        
+        .search-btn {
+            position: absolute;
+            right: 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
         }
         
         /* Hero Section */
@@ -97,6 +123,7 @@
             text-align: center;
             color: white;
             padding: 0 20px;
+            position: relative;
         }
         
         .hero-content {
@@ -124,12 +151,32 @@
             font-weight: 600;
             text-transform: uppercase;
             transition: all 0.3s;
+            border: none;
+            cursor: pointer;
         }
         
         .btn:hover {
             background-color: #ff5252;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Promo Banner */
+        .promo-banner {
+            background-color: var(--accent);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-weight: 500;
+        }
+        
+        .countdown {
+            font-weight: 700;
+            background-color: white;
+            color: var(--accent);
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin: 0 5px;
         }
         
         /* Featured Products */
@@ -171,6 +218,7 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.07);
             transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
         }
         
         .product-card:hover {
@@ -241,17 +289,36 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
-        .promo-banner {
-            background-color: var(--accent);
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            font-weight: 500;
-        }
         
         .add-cart:hover {
             background-color: var(--accent);
+        }
+        
+        .wishlist-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .wishlist-btn:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .star-rating {
+            color: gold;
+            margin: 5px 0;
         }
         
         /* Collection Section */
@@ -351,6 +418,126 @@
             font-size: 20px;
         }
         
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--secondary);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 80px;
+            color: rgba(0,0,0,0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .customer-info {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .customer-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+        
+        .customer-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .customer-name {
+            font-weight: 600;
+        }
+        
+        .customer-location {
+            font-size: 14px;
+            color: #777;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--secondary);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 0 20px 20px;
+            border-top: 1px solid var(--light-gray);
+        }
+        
+        /* Size Guide */
+        .size-guide {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .size-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        
+        .size-table th, .size-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid var(--light-gray);
+        }
+        
+        .size-table th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .size-table tr:nth-child(even) {
+            background-color: var(--secondary);
+        }
+        
         /* Newsletter */
         .newsletter {
             padding: 80px 0;
@@ -371,6 +558,46 @@
             border: 1px solid var(--light-gray);
             border-radius: 5px;
             font-size: 16px;
+        }
+        
+        /* Trust Badges */
+        .trust-badges {
+            background-color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .badges-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .badge-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 120px;
+        }
+        
+        .badge-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary);
+        }
+        
+        .badge-text {
+            font-size: 14px;
+            color: #777;
+            text-align: center;
         }
         
         /* Footer */
@@ -451,6 +678,317 @@
             color: #999;
         }
         
+        /* Product Detail Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 1000px;
+            margin: 50px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .product-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+        }
+        
+        .product-gallery {
+            padding: 40px;
+            background-color: var(--secondary);
+        }
+        
+        .main-image {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .thumbnails {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .thumbnail.active {
+            border-color: var(--accent);
+        }
+        
+        .product-details {
+            padding: 40px;
+        }
+        
+        .product-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .product-description {
+            margin: 20px 0;
+            color: #666;
+        }
+        
+        .price-box {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .current-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-right: 15px;
+        }
+        
+        .old-price {
+            font-size: 20px;
+            text-decoration: line-through;
+            color: #999;
+        }
+        
+        .product-meta {
+            margin: 20px 0;
+        }
+        
+        .meta-item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .meta-label {
+            width: 120px;
+            font-weight: 600;
+        }
+        
+        .product-variation {
+            margin: 20px 0;
+        }
+        
+        .variation-label {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .size-options, .color-options {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .size-option, .color-option {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .size-option:hover, .color-option:hover {
+            border-color: var(--accent);
+        }
+        
+        .size-option.active, .color-option.active {
+            background-color: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+        
+        .color-option {
+            border-radius: 50%;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-gray);
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        
+        .quantity-input {
+            width: 60px;
+            height: 40px;
+            border: 1px solid var(--light-gray);
+            text-align: center;
+            font-size: 16px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .add-to-cart-btn {
+            flex: 1;
+        }
+        
+        .add-to-wishlist-btn {
+            width: 50px;
+            height: 50px;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background-color: white;
+        }
+        
+        .add-to-wishlist-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        
+        .product-tabs {
+            margin-top: 30px;
+        }
+        
+        .tab-links {
+            display: flex;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .tab-link {
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .tab-link.active {
+            border-bottom: 2px solid var(--accent);
+            color: var(--accent);
+        }
+        
+        .tab-content {
+            padding: 20px 0;
+        }
+        
+        .tab-pane {
+            display: none;
+        }
+        
+        .tab-pane.active {
+            display: block;
+        }
+        
+        /* Related Products */
+        .related-products {
+            padding: 40px;
+            border-top: 1px solid var(--light-gray);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 99;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        
+        /* Live Chat */
+        .live-chat-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 100px;
+            padding: 15px 25px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 99;
+        }
+        
         /* Responsive */
         @media (max-width: 992px) {
             .hero h1 {
@@ -459,6 +997,10 @@
             
             .collection-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .product-detail {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -474,13 +1016,19 @@
             .collection-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .product-gallery, .product-details {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Promo Banner -->
     <div class="promo-banner">
         DISKON 20% UNTUK SEMUA HOODIE BARU! BERAKHIR DALAM <span class="countdown">23:59:59</span> | GUNAKAN KODE: URBANNEW
     </div>
+
     <!-- Header -->
     <header>
         <div class="container">
@@ -498,6 +1046,10 @@
                     Keranjang (0)
                 </div>
             </nav>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Cari hoodie favorit Anda...">
+                <button class="search-btn">🔍</button>
+            </div>
         </div>
     </header>
 
@@ -519,13 +1071,15 @@
         
         <div class="products">
             <!-- Product 1 -->
-            <div class="product-card">
+            <div class="product-card" onclick="openProductDetail()">
+                <div class="wishlist-btn">♡</div>
                 <div class="product-img">
                     <img src="/api/placeholder/400/500" alt="Hoodie Premium">
                     <div class="product-badge">TERLARIS</div>
                 </div>
                 <div class="product-info">
                     <h3>Urban Streetwear Hoodie</h3>
+                    <div class="star-rating">★★★★★ (124)</div>
                     <p>Hoodie premium dengan desain streetwear modern yang nyaman dipakai sepanjang hari</p>
                     <div class="product-price">
                         <div class="price">Rp 349.000</div>
@@ -536,204 +1090,9 @@
             
             <!-- Product 2 -->
             <div class="product-card">
+                <div class="wishlist-btn">♡</div>
                 <div class="product-img">
                     <img src="/api/placeholder/400/500" alt="Hoodie Premium">
                     <div class="product-badge">BARU</div>
                 </div>
                 <div class="product-info">
-                    <h3>Minimalist Hoodie</h3>
-                    <p>Hoodie dengan desain minimalis elegan yang cocok untuk berbagai gaya pakaian</p>
-                    <div class="product-price">
-                        <div class="price">Rp 299.000</div>
-                        <div class="add-cart">+</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Product 3 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="/api/placeholder/400/500" alt="Hoodie Premium">
-                </div>
-                <div class="product-info">
-                    <h3>Oversize Comfort Hoodie</h3>
-                    <p>Hoodie oversize dengan bahan premium yang memberikan kenyamanan maksimal</p>
-                    <div class="product-price">
-                        <div class="price">Rp 379.000</div>
-                        <div class="add-cart">+</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Product 4 -->
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="/api/placeholder/400/500" alt="Hoodie Premium">
-                    <div class="product-badge">DISKON</div>
-                </div>
-                <div class="product-info">
-                    <h3>Urban Graphic Hoodie</h3>
-                    <p>Hoodie dengan grafis keren yang menarik perhatian dan membuat gaya Anda stand out</p>
-                    <div class="product-price">
-                        <div class="price">Rp 329.000</div>
-                        <div class="add-cart">+</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Collections -->
-    <section class="collections">
-        <div class="container">
-            <div class="section-heading">
-                <h2>KOLEKSI KAMI</h2>
-                <p>Temukan gaya yang sempurna untuk setiap kesempatan</p>
-            </div>
-            
-            <div class="collection-grid">
-                <!-- Collection 1 -->
-                <div class="collection-card">
-                    <img src="/api/placeholder/400/500" alt="Koleksi Pria">
-                    <div class="collection-overlay">
-                        <h3>Koleksi Pria</h3>
-                        <p>Hoodie keren dengan potongan maskulin</p>
-                        <a href="#" class="btn">Lihat Koleksi</a>
-                    </div>
-                </div>
-                
-                <!-- Collection 2 -->
-                <div class="collection-card">
-                    <img src="/api/placeholder/400/500" alt="Koleksi Wanita">
-                    <div class="collection-overlay">
-                        <h3>Koleksi Wanita</h3>
-                        <p>Hoodie stylish untuk tampilan casual chic</p>
-                        <a href="#" class="btn">Lihat Koleksi</a>
-                    </div>
-                </div>
-                
-                <!-- Collection 3 -->
-                <div class="collection-card">
-                    <img src="/api/placeholder/400/500" alt="Koleksi Limited Edition">
-                    <div class="collection-overlay">
-                        <h3>Limited Edition</h3>
-                        <p>Hoodie eksklusif dengan desain terbatas</p>
-                        <a href="#" class="btn">Lihat Koleksi</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits -->
-    <section class="benefits">
-        <div class="container">
-            <div class="section-heading">
-                <h2>KEUNGGULAN KAMI</h2>
-                <p>Mengapa harus memilih URBAN HOOD?</p>
-            </div>
-            
-            <div class="benefits-grid">
-                <!-- Benefit 1 -->
-                <div class="benefit-card">
-                    <div class="benefit-icon">✓</div>
-                    <h3>Kualitas Premium</h3>
-                    <p>Kami hanya menggunakan bahan terbaik untuk setiap hoodie kami</p>
-                </div>
-                
-                <!-- Benefit 2 -->
-                <div class="benefit-card">
-                    <div class="benefit-icon">🚚</div>
-                    <h3>Pengiriman Cepat</h3>
-                    <p>Pesanan Anda akan diproses dan dikirim dalam waktu 1-2 hari kerja</p>
-                </div>
-                
-                <!-- Benefit 3 -->
-                <div class="benefit-card">
-                    <div class="benefit-icon">↩️</div>
-                    <h3>Garansi 30 Hari</h3>
-                    <p>Tidak puas? Kembalikan produk dalam 30 hari untuk pengembalian dana penuh</p>
-                </div>
-                
-                <!-- Benefit 4 -->
-                <div class="benefit-card">
-                    <div class="benefit-icon">💬</div>
-                    <h3>Customer Service 24/7</h3>
-                    <p>Tim kami siap membantu Anda kapan pun Anda membutuhkan bantuan</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="section-heading">
-                <h2>BERGABUNGLAH DENGAN KAMI</h2>
-                <p>Dapatkan diskon 10% untuk pembelian pertama Anda dan info eksklusif tentang produk baru</p>
-            </div>
-            
-            <form class="newsletter-form">
-                <input type="email" placeholder="Masukkan email Anda" required>
-                <button type="submit" class="btn">Berlangganan</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <!-- Column 1 -->
-                <div class="footer-column">
-                    <h3>URBAN HOOD</h3>
-                    <p>Brand lokal yang berfokus pada hoodie premium dengan desain keren dan kualitas terbaik.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-icon">FB</a>
-                        <a href="#" class="social-icon">IG</a>
-                        <a href="#" class="social-icon">TW</a>
-                    </div>
-                </div>
-                
-                <!-- Column 2 -->
-                <div class="footer-column">
-                    <h3>Kategori</h3>
-                    <ul>
-                        <li><a href="#">Pria</a></li>
-                        <li><a href="#">Wanita</a></li>
-                        <li><a href="#">Limited Edition</a></li>
-                        <li><a href="#">Koleksi Baru</a></li>
-                        <li><a href="#">Best Seller</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Column 3 -->
-                <div class="footer-column">
-                    <h3>Informasi</h3>
-                    <ul>
-                        <li><a href="#">Tentang Kami</a></li>
-                        <li><a href="#">Cara Pemesanan</a></li>
-                        <li><a href="#">Pengiriman & Pengembalian</a></li>
-                        <li><a href="#">Syarat & Ketentuan</a></li>
-                        <li><a href="#">Kebijakan Privasi</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Column 4 -->
-                <div class="footer-column">
-                    <h3>Kontak Kami</h3>
-                    <ul>
-                        <li>Email: info@urbanhood.id</li>
-                        <li>Telepon: +62 812 3456 7890</li>
-                        <li>Alamat: Jl. Fashion Street No. 123, Jakarta Selatan</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                &copy; 2025 URBAN HOOD. Hak Cipta Dilindungi.
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
